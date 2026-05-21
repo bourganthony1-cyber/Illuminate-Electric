@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Illuminate Electrical - Louisiana License #74338. Engineer-led electrical for Baton Rouge. We don't just install — we design systems that last. 25+ years experience.">
+    <title>Illuminate Electrical | Engineer-Led Electrical for Baton Rouge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a4d7a;
+            --primary-dark: #0f3556;
+            --accent: #f59e0b;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .phone-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phone-link:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-subhead {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-license {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .pain-points h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            color: var(--primary);
+        }
+
+        .pain-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .pain-item {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .pain-item p {
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Differentiation Banner */
+        .differentiation {
+            background: var(--accent);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+
+        .differentiation h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .differentiation p {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* How We Work */
+        .how-we-work {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .process-step h3 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Service Area */
+        .service-area {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .area-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .area-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .area-note {
+            text-align: center;
+            color: var(--text-light);
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .credential-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .credential-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-card p {
+            color: var(--text-light);
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: var(--bg-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 5rem 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subhead {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-link {
+                font-size: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Illuminate Electrical</div>
+                <div class="header-cta">
+                    <a href="tel:2252550699" class="phone-link">
+                        📞 (225) 255-0699
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>We Don't Install Electrical.<br>We Engineer It.</h1>
+            <p class="hero-subhead">25+ years of experience. Engineer-led. Built to last decades, not just pass inspection.</p>
+            <p class="hero-license">Louisiana License #74338 • Bonded & Insured</p>
+            <a href="tel:2252550699" class="cta-button">Call for Free Consultation</a>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>You're Here Because Something's Not Right</h2>
+            <div class="pain-list">
+                <div class="pain-item">
+                    <p>Your panel trips when the AC and dryer run at the same time — and your electrician said "that's just how it is."</p>
+                </div>
+                <div class="pain-item">
+                    <p>You want an EV charger, but three different electricians gave you three different answers about whether your service can handle it.</p>
+                </div>
+                <div class="pain-item">
+                    <p>You're building a custom home and your builder's electrician seems... fine. But this is a half-million dollar house and "fine" isn't good enough.</p>
+                </div>
+                <div class="pain-item">
+                    <p>The generator quote you got seems too cheap. Like "this isn't going to work when the power actually goes out" cheap.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiation Banner -->
+    <section class="differentiation">
+        <div class="container">
+            <h2>Most Electricians Follow the Print. We Design the Print.</h2>
+            <p>Tate Grafton is a licensed engineer and licensed electrician. That's rare. It's the difference between an install that works on day one and a system that still works in twenty years. We do load calculations. We size for what you'll add later. We design lighting around how rooms are actually used. That's the engineer in the truck.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">What We Actually Do</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>New Construction & Renovations</h3>
+                    <p>We sit with the architect, not just the framer. Electrical design for custom homes and major renovations that's planned from the ground up, not figured out on the fly.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Panel Upgrades</h3>
+                    <p>Your panel was sized for 1985. You now have central air, EV charging, a hot tub, and smart home gear. We upgrade to handle your actual life, plus room for what's next.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Whole-Home Generators</h3>
+                    <p>Proper load management. Automatic transfer switches. Backup power designed for your critical systems. Not just "we bolted a Generac to your house and hoped."</p>
+                </div>
+                <div class="service-card">
+                    <h3>EV Charger Installation</h3>
+                    <p>Level 2 charging that doesn't trip when the dryer runs. We assess your service, upgrade if needed, and install it right the first time.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Smart Home Integration</h3>
+                    <p>Lighting control, automated systems, home theater wiring. We design the backbone so your smart home actually works instead of fighting with itself.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Lighting Design</h3>
+                    <p>We don't just hang fixtures. We plan layers — task, ambient, accent — so rooms actually feel right instead of just bright.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work -->
+    <section class="how-we-work">
+        <div class="container">
+            <h2 class="section-title">How This Works</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Free Consultation</h3>
+                    <p>We come to your site, look at what you're working with, and explain your options. No pressure, no upsells.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Engineer-Signed Proposal</h3>
+                    <p>Detailed scope, timeline, and fixed price. You know exactly what you're getting and what it costs.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Built Right</h3>
+                    <p>Permitted, inspected, and engineered to last decades. Not just code-compliant — actually right.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What People Actually Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Tate didn't just install our generator — he redesigned our entire panel to handle it properly. Three years later, still works perfectly. Worth every penny."</p>
+                    <p class="testimonial-author">— Mike R., Prairieville</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"We had three electricians quote our renovation. Tate was the only one who caught that our service was undersized and explained why it mattered. Saved us from a disaster."</p>
+                    <p class="testimonial-author">— Jennifer L., Baton Rouge</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Finally found an electrician who actually understands load calculations. Our EV charger, pool pump, and AC all run without tripping anything. That's engineering."</p>
+                    <p class="testimonial-author">— David K., Central</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="service-area">
+        <div class="container">
+            <h2 class="section-title">Where We Work</h2>
+            <div class="area-list">
+                <span class="area-badge">Baton Rouge</span>
+                <span class="area-badge">Shenandoah</span>
+                <span class="area-badge">Central</span>
+                <span class="area-badge">Prairieville</span>
+                <span class="area-badge">Dutchtown</span>
+                <span class="area-badge">Denham Springs</span>
+                <span class="area-badge">Zachary</span>
+            </div>
+            <p class="area-note">We also take larger projects in Hammond, Gonzales, and Port Allen.</p>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 class="section-title">The Credentials</h2>
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <h3>25+ Years</h3>
+                    <p>Engineering Experience</p>
+                </div>
+                <div class="credential-card">
+                    <h3>License #74338</h3>
+                    <p>Louisiana Licensed & Insured</p>
+                </div>
+                <div class="credential-card">
+                    <h3>85% Score</h3>
+                    <p>BuildZoom Rating (Large Projects)</p>
+                </div>
+                <div class="credential-card">
+                    <h3>BBB Listed</h3>
+                    <p>Better Business Bureau</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Family-Owned, Engineer-Led</h2>
+            <div class="about-content">
+                <p>Illuminate Electrical is a family business bringing 25 years of engineering experience to Baton Rouge. We moved here in 2024 to serve homeowners and builders who want electrical work done right — engineered for safety, efficiency, and longevity.</p>
+                <p>We're not the electrician you call to change an outlet. We're the team you bring in when you want systems designed and installed by someone who understands the engineering behind the work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>If Your Electrician Can't Explain Load Calculations, You're Hiring the Wrong Guy</h2>
+            <p>Most electrical problems start at the planning stage. Call us before you commit to the wrong solution.</p>
+            <a href="tel:2252550699" class="cta-button">Call (225) 255-0699</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Illuminate Electrical LLC • Louisiana License #74338 • Licensed & Insured</p>
+        </div>
+    </footer>
+</body>
+</html>
