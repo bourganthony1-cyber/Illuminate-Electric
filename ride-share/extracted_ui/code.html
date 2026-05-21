@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Limeaux - Login</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-surface-variant": "#c4c5d9",
+                    "surface-container": "#1e2020",
+                    "primary-container": "#2e5bff",
+                    "on-secondary-container": "#b5b5b5",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-primary-container": "#efefff",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary": "#313030",
+                    "inverse-on-surface": "#2f3131",
+                    "error": "#ffb4ab",
+                    "surface-container-lowest": "#0c0f0f",
+                    "secondary": "#c6c6c6",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#124af0",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "surface-container-highest": "#333535",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-container": "#f3f0ef",
+                    "outline-variant": "#434656",
+                    "tertiary-container": "#6e6d6d",
+                    "on-primary": "#002388",
+                    "on-primary-fixed": "#001356",
+                    "background": "#121414",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-bright": "#37393a",
+                    "tertiary": "#c8c6c5",
+                    "on-secondary": "#303030",
+                    "primary": "#b8c3ff",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "secondary-container": "#474747",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#282a2b",
+                    "surface": "#121414",
+                    "on-background": "#e2e2e2",
+                    "on-primary-fixed-variant": "#0035be",
+                    "surface-variant": "#333535",
+                    "on-error": "#690005",
+                    "surface-tint": "#b8c3ff",
+                    "outline": "#8e90a2",
+                    "on-surface": "#e2e2e2",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "primary-fixed": "#dde1ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "sm": "12px",
+                    "lg": "24px",
+                    "margin-desktop": "40px",
+                    "gutter": "16px",
+                    "md": "16px",
+                    "xl": "32px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "title-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "title-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #333535; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #434656; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen relative overflow-hidden flex items-center justify-center p-margin-mobile md:p-margin-desktop">
+<!-- Atmospheric Background Image & Overlays -->
+<div class="absolute inset-0 z-0 pointer-events-none">
+<img alt="Background" class="w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="A sophisticated, dark-mode abstract background featuring deep charcoal and pure black tones. Subtle, out-of-focus volumetric lighting creates soft, ethereal blue highlights that suggest depth and premium modern technology. The scene evokes the feeling of a sleek, high-end environment at night, with smooth gradients and a minimalist aesthetic that perfectly complements a glassmorphic user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOPk1VsLdN2EkLPJdcDx-8KAVJErGMb7nfakG6EkmFyT--zsc2BN0AGhiUBbJtuoavood1xoAMIIVnfmx0oD9LADBt4g6Ga1X8ybqyEHkXbQ8QnmuZ_xhepKt40w6B0kK31M0cy_r_M7iyeK1JuLeBjOU1hOdV5cBEiIY2vSIj3R8jSNV25Md6lENfBRBXfKYlk2G9b5gLTEi7ePPU0XfKLqz97pm8xeYCZUUQg_mQg243PW608FPHZEDqFr2tu2zsM62RpBgrHy8"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/95 to-background"></div>
+<!-- Subtle Electric Blue Ambient Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/10 blur-[120px] rounded-full"></div>
+</div>
+<!-- Login Container (Glassmorphic) -->
+<main class="relative z-10 w-full max-w-[440px] flex flex-col">
+<!-- Brand Header -->
+<div class="flex justify-center mb-10">
+<h1 class="font-headline-lg text-headline-lg tracking-tighter text-on-surface">
+                Limeaux<span class="text-primary-container">.</span>
+</h1>
+</div>
+<!-- Glass Card -->
+<div class="bg-surface/40 backdrop-blur-2xl border border-white/10 rounded-[24px] p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
+<div class="mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-2">Welcome back</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Enter your details to access your account.</p>
+</div>
+<form class="flex flex-col gap-5">
+<!-- Email Field -->
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-2 uppercase tracking-wider" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="mail">mail</span>
+<input class="w-full bg-surface-container/50 border border-white/10 rounded-xl py-3 pl-12 pr-4 font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all backdrop-blur-sm" id="email" placeholder="name@example.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase tracking-wider" for="password">Password</label>
+<a class="font-body-sm text-body-sm text-primary-container hover:text-primary transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="lock">lock</span>
+<input class="w-full bg-surface-container/50 border border-white/10 rounded-xl py-3 pl-12 pr-12 font-body-lg text-body-lg text-on-surface placeholder:text-outline-variant focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all backdrop-blur-sm" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="visibility_off">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="mt-2 w-full bg-primary-container text-on-primary-container font-title-md text-title-md py-3.5 rounded-xl flex items-center justify-center gap-2 hover:bg-opacity-90 active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(46,91,255,0.2)]" type="submit">
+                    Login
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Divider -->
+<div class="flex items-center gap-4 my-8">
+<div class="h-px bg-white/10 flex-1"></div>
+<span class="font-body-sm text-body-sm text-outline-variant">or continue with</span>
+<div class="h-px bg-white/10 flex-1"></div>
+</div>
+<!-- Social Logins -->
+<div class="flex gap-4">
+<button class="flex-1 bg-surface-container/30 border border-white/10 rounded-xl py-3 flex justify-center items-center hover:bg-surface-container transition-colors active:scale-[0.98]" type="button">
+<!-- Apple Icon SVG -->
+<svg class="w-5 h-5 fill-current text-on-surface" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.42 16.99c-1.39 1.99-2.82 4.01-5.06 4.01-2.2 0-2.88-1.33-5.38-1.33-2.5 0-3.28 1.29-5.38 1.33-2.29.04-3.95-2.24-5.38-4.28C1.29 12.63 0 8.65 0 6.13 0 2.65 2.15.53 4.88.53c2.15 0 3.86 1.43 5.42 1.43 1.61 0 3.52-1.54 5.86-1.54 1.01 0 3.88.11 5.67 2.69-1.48.88-2.55 2.45-2.55 4.31 0 2.94 2.58 4.04 2.67 4.08-.04.13-1.07 3.65-3.53 7.02l-3.01-1.53zM10.97.13c-.04 1.48.56 2.89 1.54 3.91.95.99 2.3 1.63 3.69 1.54.04-1.44-.56-2.85-1.54-3.87C13.72.73 12.38.09 10.97.13z"></path>
+</svg>
+</button>
+<button class="flex-1 bg-surface-container/30 border border-white/10 rounded-xl py-3 flex justify-center items-center hover:bg-surface-container transition-colors active:scale-[0.98]" type="button">
+<!-- Google Icon SVG -->
+<svg class="w-5 h-5 fill-current text-on-surface" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Footer Toggle -->
+<div class="mt-8 text-center">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Don't have an account?
+                <a class="text-primary-container font-semibold hover:text-primary transition-colors ml-1" href="#">Create an account</a>
+</p>
+</div>
+</main>
+</body></html>
